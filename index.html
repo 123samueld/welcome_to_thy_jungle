@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./Resources/audio/howler.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./resources/images/WTTJFavicon.ico">
+    <title>Welcome to thy Junlge</title>
+</head>
+<body>
+    <!--audio src="./Resources/audio/backgroundSound/jungle_beats_1.mp3" autoplay></audio-->
+    <div id="introCoverScreen" class="introCoverScreen">
+        <div class="welcomeMessage">
+            <h1>Welcome </h1>
+            <h4> to thy </h4> 
+            <h1>Jungle</h1>    
+            <h2 class="pulsingHeading">Press Enter</h2>
+        </div>
+        <img src="resources/images/introBackground.png">
+    </div>
+
+
+    
+    <!-- Honorarium -->
+    <!-- Map Editor -->
+
+    <div id="controlsScreen" class="controlsScreen">
+        <div id="controls">
+            <img src="resources/images/controls.png">
+            <h2 class="pulsingHeading">Press Enter</h2>
+        </div>
+        <img src="resources/images/introBackground.png">
+    </div>
+
+    
+    <div id="countDownScreen" class="countDownScreen">
+        <img src="resources/images/countDownBackground.png">
+    </div> 
+    <h2 class="animatedCountDown" id="countDownDigit"></h2>
+
+    <div class="soulBarOverlay" id="soulBarOverlay">
+        <div class="soulBar" id="soulBar"></div>
+    </div>
+    <canvas id="canvas">
+        <img src="resources/images/approachingDawn.png" id="approachingDawn">
+        <img src="resources/images/treeLine4.png" id="treeLine3">
+		<img src="resources/images/hangingVine2.png" id="treeLine2">
+        <img src="resources/images/treeLine1.png" id="treeLine1">
+        <img src="resources/images/grass.png" id="grass">
+        <img src="resources/images/ground.png" id="ground">
+        <img src="resources/images/taurik_fire_warrior.png" id="taurikFireWarrior">
+        <img src="resources/images/sambo.png" id="character">
+        <img src="resources/images/venutian_Mantrap.png" id="venutianMantrap">        
+        <img src="resources/images/gizzard.png" id="gizzard">
+        <img src="resources/images/grenade.png" id="grenade">
+        <img src="resources/images/platform.png" id="platform">
+        <img src="resources/images/LZ.png" id="LZ">
+        <img src="resources/images/chopper.png" id="chopper">
+    </canvas>
+
+    <div id="gameOverScreen" class="gameOverScreen">
+        <h2>Game Over</h2>
+        <h4 id="deathReason"></h4>
+        <h3 id="playAgainMessage">Play Again?(y/n)</h3>
+    </div>
+
+    <div id="victoryScreen" class="victoryScreen">
+        <h2>Victory!</h2>
+        <img src="resources/images/WIPs/victoryBackground/flame1.gif" id="dataShrineSkullCandle1" class="dataShrineSkullCandle">
+        <img src="resources/images/WIPs/victoryBackground/flame2.gif" id="dataShrineSkullCandle2" class="dataShrineSkullCandle">
+        <img src="resources/images/WIPs/victoryBackground/flame3.gif" id="dataShrineSkullCandle3" class="dataShrineSkullCandle">
+        <img src="resources/images/WIPs/victoryBackground/flame4.gif" id="dataShrineSkullCandle4" class="dataShrineSkullCandle">
+        <img src="resources/images/WIPs/victoryBackground/victoryBulkHeadBackGround.png" id="victoryBulkHeadBackGround">
+        <img src="" id="medalImg">
+        <div class="victoryScoreTableContainer">
+            <table class="victoryScoreTable">
+                <tr><td></td><td></td></tr>
+                <tr>
+                    <td id="confirmedKills" class="computerText leftColumn">Confirmed Kills:</td>
+                    <td id="rightCell1"  class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="balisticKills" class="computerText leftColumn">Balistic Kills:</td>
+                    <td id="rightCell2" class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="bladeKills" class="computerText leftColumn">Blade Kills:</td>
+                    <td id="rightCell3" class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="grenadeKills" class="computerText leftColumn">Grenade Kills:</td>
+                    <td id="rightCell4"  class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="timeRemaining" class="computerText leftColumn">Time:</td>
+                    <td id="rightCell5" class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="healthRemaining" class="computerText leftColumn">Remaining Health:</td>
+                    <td id="rightCell6" class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="totalScoreRating" class="computerText leftColumn">Score:</td>
+                    <td id="rightCell7" class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="medalAward" class="computerText leftColumn">Medal Awarded:</td>
+                    <td id="rightCell8" class="computerText rightColumn"></td>
+                </tr>
+                <tr>
+                    <td id="playAgainMessage" class="computerText leftColumn playAgainMessageVictoryFrame">Replay?</td>
+                    <td id="rightCell" class="computerText rightColumn">(Y/N)</td>
+                </tr>
+                
+            </table>
+        </div>
+        
+        <div class="victoryParallax">
+            <img src="resources/images/WIPs/victoryBackground/victoryStar1.png" id="victoryStar11" class="victoryStarLayer">
+            <img src="resources/images/WIPs/victoryBackground/victoryStar2.png" id="victoryStar12" class="victoryStarLayer">
+            <img src="resources/images/WIPs/victoryBackground/victoryStar3.png" id="victoryStar21" class="victoryStarLayer">
+            <img src="resources/images/WIPs/victoryBackground/victoryStar1.png" id="victoryStar22" class="victoryStarLayer">
+            <img src="resources/images/WIPs/victoryBackground/victoryStar2.png" id="victoryStar31" class="victoryStarLayer">
+            <img src="resources/images/WIPs/victoryBackground/victoryStar3.png" id="victoryStar32" class="victoryStarLayer">
+        </div>
+    </div>
+
+    <div id="thankYouScreen" class="thankYouScreen">
+        <h2>Thank you for playing:</h2>
+        <br>
+        <h1>Welcome to thy Jungle</h2>
+        <p>To support further development please consider becoming a patron of the arts.</p>
+        <a class="patreonLink" href="https://www.patreon.com/RougeTrader" target="_blank"><img class="patreonImg" src="resources/images/WIPs/Patreon.png"></a>
+    </div>
+    
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>

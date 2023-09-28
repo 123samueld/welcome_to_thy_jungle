@@ -1,0 +1,547 @@
+@font-face 
+{
+    font-family: Avatar;
+    src: url("Resources/font/Avatar-Water.ttf");
+}
+
+@font-face 
+{
+    font-family: DrillSargent;
+    src: url("Resources/font/DrillSargent.ttf");
+}
+
+@font-face 
+{
+    font-family: Rexlia;
+    src: url("Resources/font/Rexlia.otf");
+}
+
+@font-face 
+{
+    font-family: PC;
+    src: url("Resources/font/PC.ttf");
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1
+{
+    font-family: Avatar;
+}
+h2, h3, h4 
+{
+    
+    font-family: DrillSargent;
+}
+
+h3
+{
+    font-size: 80px;
+}
+
+h4
+{
+    font-size: 40px;
+}
+
+.content
+{
+    margin-top: 50px;
+    margin-left: 50px;
+    font-family: Avatar;
+    font-size: 200px;
+}
+.introCoverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 12;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeMessage {
+    position: absolute;
+    z-index: 13;
+    width: fit-content;
+    height: fit-content;
+    top: 5%;
+    text-align: center; /* Center-align all child elements */
+}
+
+.welcomeMessage h1 {
+    font-size: 150px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.welcomeMessage h2 {
+    font-size: 40px;
+    font-weight: 550;
+}
+
+.welcomeMessage h4 {
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Avatar;
+}
+
+
+
+
+.controlsScreen
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+#controls
+{
+    position: absolute;
+    z-index: 11;
+    width: fit-content;
+    height: fit-content;
+    top: 15%;
+}
+#controls h2
+{
+    position: absolute;
+    top: 100%;
+    left: 25%;  
+    transform: translate(50%, 50%);  
+    font-size: 40px;
+    font-weight: 550;
+}
+
+/* Define the keyframes for the pulsing animation */
+@keyframes pulse {
+    0% { opacity: 0.3; } /* Start with lower opacity */
+    50% { opacity: 1; } /* Peak opacity */
+    100% { opacity: 0.3; } /* End with lower opacity */
+}
+
+/* Apply the animation to the h2 element */
+.pulsingHeading {
+    animation: pulse 1s linear infinite; /* Use 'infinite' to make the animation loop */
+}
+
+
+#countDownDigit
+{
+    display: none;
+    z-index: 16;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 3em;
+}
+@keyframes fadeOutAndEnlarge {
+    0% {
+      font-size: 1em;
+      opacity: 1;
+    }
+    100% {
+      font-size: 10em;
+      opacity: 0;
+    }
+  }
+  
+.animatedCountDown {
+    font-size: 1em;
+    opacity: 1;
+  }
+
+.countDownScreen 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 8;
+    width: 100vw;
+    height: 100vh;
+}
+
+#goDigit
+{
+    z-index: 7;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+}
+
+.soulBarOverlay
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 501px;
+    height: 94px;
+    display: block;
+    z-index: 7;
+    background-image: url("resources/images/soulBarOverlay.png");
+}
+
+.soulBar
+{
+    position: relative;
+    top: 36px;
+    left: 57px;
+    width: 300px;
+    height: 53.5px;
+    background: linear-gradient(to top, #800000, #ff0000);
+    border-radius: 10px;
+}
+
+#canvas
+{
+    display: none;
+    z-index: 6;
+}
+
+.canvas-fade-out {
+  opacity: 0;
+  transition: opacity 3s ease-out;
+}
+.gameOverScreen
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    text-align: center;
+    background-image: url("resources/images/WIPs/gameOver/composite.png");
+    background-size: cover;
+    font-weight: 500;
+
+}
+
+.gameOverScreen h2
+{
+    font-weight: 500;
+    font-size: 90px;
+    top: -100px;
+    color: white;
+}
+
+.gameOverScreen h3
+{
+    font-weight: 500;
+    top: 120px;
+    font-size: 40px;
+    color: white;
+}
+
+.gameOverScreen h4
+{
+    font-weight: 500;
+    color: white;
+    top: -150px;
+}
+
+.victoryScreen
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    text-align: center;
+    background-color: #000;  
+}
+
+.victoryScreen h2
+{
+    font-size: 100px;
+}
+
+.victoryScreen h3
+{
+    font-size: 30px;
+}
+.victoryScoreTableContainer
+{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+#victoryBulkHeadBackGround
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#medalImg
+{
+    width: 112px;
+    height: 112px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translate(631%, 147%);
+}
+.dataShrineSkullCandle
+{
+    display: block;
+    position: absolute;
+    top: 674px;;
+    z-index: 2;
+}
+#dataShrineSkullCandle1
+{
+    left: 633px;
+}
+
+#dataShrineSkullCandle2
+{
+    left: 713px;
+}
+
+#dataShrineSkullCandle3
+{
+    left: 795px;
+}
+
+#dataShrineSkullCandle4
+{
+    left: 877px;
+}
+.victoryScoreTable
+{
+    margin-top: 8px;
+    border: 3px solid grey;
+    border-radius: 25px;
+    width: 282px;
+    height: 385px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-family: PC;
+    transform: translate(221%, 75%);
+    background-image: url("resources/images/WIPs/victoryBackground/dataSlateMatrix.png");
+    background-size: cover;
+    z-index: 1;
+}
+
+.computerText
+{
+    padding: 3px 5px;
+    font-family: PC;
+    font-weight: 100;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #06eb32;
+    animation: glitch 2000ms infinite alternate;
+}
+
+.computerText::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5; /* Adjust opacity as needed */
+    color: white; /* Shadow color */
+    z-index: -1;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.02em 0 0 rgba(255, 0, 0, 0.75), 0.02em 0.02em 0 rgba(0, 0, 255, 0.75), 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+    25% {
+        text-shadow: -0.02em 0 0 rgba(255, 0, 0, 0.75), 0.02em 0.02em 0 rgba(0, 0, 255, 0.75), 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0.02em 0 0 rgba(255, 0, 0, 0.75), -0.02em 0.02em 0 rgba(0, 0, 255, 0.75), 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+    75% {
+        text-shadow: -0.02em 0 0 rgba(255, 0, 0, 0.75), -0.02em 0.02em 0 rgba(0, 0, 255, 0.75), 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0.02em 0 0 rgba(255, 0, 0, 0.75), 0.02em 0.02em 0 rgba(0, 0, 255, 0.75), 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.victoryScoreTable tr
+{
+    height: fit-content;
+}
+
+.leftColumn
+{
+    text-align: left;
+}
+
+.rightColumn
+{
+    text-align: right;
+}
+
+.victoryParallax
+{
+    width: 300%;    
+    height: 100vh;
+    z-index: 0;
+}
+
+.victoryStarLayer
+{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#victoryStar11
+{
+    left: 0;
+    opacity: 0.1;
+}
+#victoryStar12
+{
+    left: -100%; 
+    opacity: 0.1;
+}
+#victoryStar21
+{
+    left: 0;
+    opacity: 0.35;
+}
+#victoryStar22
+{
+    left: -100%; 
+    opacity: 0.35;
+}
+#victoryStar31
+{
+    left: 0;
+    opacity: 0.75;
+}
+#victoryStar32
+{
+    left: -100%; 
+    opacity: 0.75;
+}
+
+.thankYouScreen
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 0;
+    text-align: center;
+}
+
+.thankYouScreen h1
+{
+    margin-top: 0;
+    font-family: Avatar;
+    font-size: 80px;
+    font-weight: 550;
+}
+
+.thankYouScreen h2
+{
+    margin-top: 120px;
+    font-size: 50px;
+    font-weight: 550;
+}
+
+.thankYouScreen p
+{
+    margin: 50px 0;
+    font-family: DrillSargent;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.patreonLink {
+    display: inline-block;
+    position: relative;
+    width: 240px; 
+    height: 120px; 
+    overflow: hidden; 
+    padding: 0;
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  .patreonImg {
+    display: block;
+    margin: 8% 15%;
+    width: 70%;
+    height: 70%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .patreonLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    background: rgb(43, 45, 47);
+    background: linear-gradient(
+      90deg,
+      rgba(43, 45, 47, 1) 0%,
+      rgba(116, 129, 132, 1) 16%,
+      rgba(155, 171, 175, 1) 33%,
+      rgba(227, 235, 237, 1) 50%,
+      rgba(155, 171, 175, 1) 66%,
+      rgba(116, 129, 132, 1) 84%,
+      rgba(43, 45, 47, 1) 100%
+    );
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5)
+  }
+
+.patreonLink:hover {
+    transform: scale(1.1);
+}
+
+.patreonLink:hover .patreonImg {
+    transform: scale(1.1);
+}
